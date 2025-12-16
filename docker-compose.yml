@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: aiworkout_postgres
+    environment:
+      POSTGRES_DB: aiworkout
+      POSTGRES_USER: aiworkout
+      POSTGRES_PASSWORD: aiworkout
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
