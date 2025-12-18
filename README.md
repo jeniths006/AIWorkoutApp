@@ -1,10 +1,12 @@
 # 🧠 AI Workout App
 
-A **full-stack AI-powered fitness platform** that combines workout logging, progression analytics, nutrition tracking, and personalized AI coaching.
+A backend-focused, full-stack fitness platform combining workout tracking, progression analytics,
+nutrition planning, and AI-assisted coaching.
 
-The goal of this project is to merge the best ideas from **Hevy** (workout tracking) and **MyFitnessPal** (nutrition tracking), enhanced with **AI-driven insights** and adaptive coaching.
+Inspired by **Hevy** (workout tracking) and **MyFitnessPal** (nutrition tracking), this project focuses on
+building a **scalable backend system first**, with AI-driven insights layered on top.
 
-This repository contains the **entire project**, including the backend API, future web frontend, and planned mobile applications.
+🟢 **Backend MVP implemented using Spring Boot and PostgreSQL**
 
 ---
 
@@ -23,15 +25,31 @@ This repository contains the **entire project**, including the backend API, futu
 - Training load and fatigue insights *(planned)*
 
 ### 🤖 AI Coaching *(Planned)*
-- Personalized training feedback
-- AI-generated workout summaries
-- Adaptive progression recommendations
-- Natural language insights based on training history
+- Rule-based training feedback using workout history
+- Progressive overload suggestions based on volume and PR trends
+- AI-generated summaries of recent training blocks
+- Natural language insights using structured training data
+
+AI features will initially rely on deterministic logic, with ML-based approaches explored later.
+
 
 ### 🍎 Nutrition Tracking *(Planned)*
 - Calorie and macro tracking
 - Meal logging
 - Nutrition insights alongside training data
+
+---
+
+## 🧪 Current Status
+
+🟢 **Backend MVP Complete**
+- Workout creation
+- Exercise management
+- Set logging
+- Flyway-managed schema
+- Dockerized local database
+
+🟡 **Frontend, AI, and nutrition features are in planning**
 
 ---
 
@@ -123,18 +141,6 @@ Password: aiworkout
 
 ---
 
-## 🧪 Current Status
-
-🟢 **Backend MVP Complete**
-- Workout creation
-- Exercise management
-- Set logging
-- Flyway-managed schema
-- Dockerized local database
-
-🟡 **Frontend, AI, and nutrition features are in planning**
-
----
 
 ## 🛣 Roadmap
 
