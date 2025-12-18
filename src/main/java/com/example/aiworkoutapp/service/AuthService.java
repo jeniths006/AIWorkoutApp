@@ -45,7 +45,7 @@ public class AuthService {
         userRepository.save(user);
 
         String token = jwtService.generateAccessToken(user.getId(), user.getEmail());
-        return new AuthResponse(token, "Bearer");
+        return new AuthResponse(token, "Bearer", user.getId(), user.getEmail());
     }
 
     @Transactional
@@ -60,7 +60,7 @@ public class AuthService {
         }
 
         String token = jwtService.generateAccessToken(user.getId(), user.getEmail());
-        return new AuthResponse(token, "Bearer");
+        return new AuthResponse(token, "Bearer", user.getId(), user.getEmail());
 
 
 
