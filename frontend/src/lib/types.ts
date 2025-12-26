@@ -1,5 +1,5 @@
 export type AuthResponse = {
-    access_token: string;
+    accessToken: string;
     token_type: string;
     userId: string;
     email: string;

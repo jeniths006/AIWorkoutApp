@@ -11,8 +11,8 @@ import {useRouter} from "next/dist/client/components/navigation";
 export default function LoginPage() {
     const router = useRouter();
 
-    const [email, setEmail] = useState("test2@example.com");
-    const [password, setPassword] = useState("Password123!");
+    const [email, setEmail] = useState("you@domain.com");
+    const [password, setPassword] = useState("12345678");
 
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
@@ -23,16 +23,16 @@ export default function LoginPage() {
         setLoading(true);
 
         try {
-            const res = await api<AuthResponse>("/api.auth.login", {
+            const res = await api<AuthResponse>("/api/auth/login", {
                 method: "POST",
                 body: JSON.stringify({email, password}),
             });
 
-            setToken(res.access_token);
+            setToken(res.accessToken);
 
             router.push("/dashboard");
         } catch (err: unknown) {
-            const message = err instanceof Error ? err.message : "Login Failed Brochacho";
+            const message = err instanceof Error ? err.message : "Login Failed!";
             setError(message)
         } finally {
             setLoading(false);
@@ -43,9 +43,9 @@ export default function LoginPage() {
             <Card>
                 <CardBody>
                     <div className="mb-6">
-                        <h1 className="text-2x1 font-semibold tracking-tight">Welcome Back monkey</h1>
+                        <h1 className="text-2x1 font-semibold tracking-tight">Welcome Back</h1>
                         <p className="mt-1 text-sm text-slate-300">
-                            Log in to continue tracking workouts and analytics and whatever BLEH
+                            Log in to continue tracking workouts and analytics and whatever
                         </p>
                     </div>
 
@@ -87,7 +87,7 @@ export default function LoginPage() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 autoComplete="current-password"
-                                placeholder="••••••••"
+                                placeholder="********"
                                 required
                             />
 
@@ -104,7 +104,7 @@ export default function LoginPage() {
                                     focus:outline-none focus:ring-4 focus:ring-indigo-500/30
                                 "
                             >
-                                {loading ? "Logging in brotisserie chicken..." : "Log In HeheheHa"}
+                                {loading ? "Logging in" : "Log In"}
                             </button>
 
                             <div className="pt-2 text-center text-sm text-slate-300">
@@ -119,7 +119,7 @@ export default function LoginPage() {
             </Card>
 
             <p className="mt-6 text-center text-xs txt-slate-400">
-                AIWorkoutApp Yippeee
+                AIWorkoutApp
             </p>
         </AuthShell>
     )
